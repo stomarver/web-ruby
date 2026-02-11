@@ -1,0 +1,155 @@
+/* .ruby — минималистичный стиль в духе theintraclinic.com + markdown */
+
+body {
+    background: #000;
+    color: #ddd;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+    line-height: 1.45;
+    margin: 0;
+    padding: 40px 20px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Заголовок: nav слева, title справа на одной строке */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.2em;
+    flex-wrap: nowrap;
+    gap: 1em;
+}
+
+.nav {
+    font-size: 1.1em;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+}
+
+.nav a {
+    color: #ff0000;            /* чисто-красный для навигации (255,0,0) */
+    margin: 0 0.2em;           /* плотнее, чем было */
+    text-decoration: none;
+}
+
+.nav a:hover,
+.nav a:focus {
+    color: #ff6666;            /* светлее при наведении */
+}
+
+/* title справа */
+.title-img {
+    max-width: 45%;            /* подстрой по необходимости */
+    height: auto;
+    image-rendering: pixelated;
+    flex-shrink: 0;
+    display: block;
+}
+
+/* Медиа-запрос для узких экранов */
+@media (max-width: 720px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .title-img {
+        max-width: 70%;
+        align-self: flex-end;
+        margin-top: 0.8em;
+    }
+}
+
+/* Все остальные ссылки на странице — тёмно-красный */
+a:not(.nav a) {
+    color: #800000;            /* 192,0,0 */
+    text-decoration: none;
+}
+
+a:not(.nav a):hover,
+a:not(.nav a):focus {
+    color: #ff4444;
+    text-decoration: underline;
+}
+
+/* Download — плотнее + тёмно-красные ссылки (уже соответствуют #c00000) */
+.download-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.2em 0 2em;
+}
+
+.download-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0.45em 0;          /* ещё чуть меньше отступ между релизами */
+    padding: 0.25em 0;
+    border-bottom: 1px solid #222;
+}
+
+.download-list li:last-child {
+    border-bottom: none;
+}
+
+.download-list .release-tag a,
+.download-list .assets a {
+    color: #c00000;
+    font-weight: bold;
+}
+
+.download-list .release-tag a:hover,
+.download-list .assets a:hover {
+    color: #ff4444;
+}
+
+.download-list .sep {
+    color: #444;
+    margin: 0 0.6em;
+}
+
+/* download-header */
+.download-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #aaa;
+    margin: 1.4em 0 0.4em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #222;
+}
+
+/* Остальные стили */
+h1, h2, h3, h4 {
+    color: #eee;
+    font-weight: normal;
+    margin: 1.3em 0 0.5em;
+}
+
+h3 { font-size: 1.4em; }
+
+pre, code {
+    background: #111;
+    color: #afa;
+    font-family: inherit;
+}
+pre {
+    padding: 0.9em;
+    border: 1px solid #222;
+    overflow: auto;
+}
+code {
+    padding: 0.1em 0.3em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+}
+
+p {
+    margin: 1em 0;
+}
