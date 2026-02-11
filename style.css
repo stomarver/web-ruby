@@ -42,7 +42,7 @@ body {
 
 /* title справа */
 .title-img {
-    max-width: 45%;            /* подстрой по необходимости */
+    max-width: 90%;            /* Удваиваем с 45% до 90%, чтобы не ломать flex на десктопе */
     height: auto;
     image-rendering: pixelated;
     flex-shrink: 0;
